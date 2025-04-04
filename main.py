@@ -1,3 +1,5 @@
+from stats import get_word_count
+
 def main():
 
     #Where is the book located
@@ -11,7 +13,7 @@ def main():
 
     #Printing the report
     print(f"Report for {book_path} is here!")
-    print(f"There were {word_count} words found in this book! WOW...\n")
+    print(f"There were {word_count} words found in the document! WOW...\n")
     
     for x in sorted_dict:
         print(f"'{x['char']}' was found '{x['freq']}' times...")
@@ -38,11 +40,6 @@ def get_char_dict(text):
         else:
             dict[letter] = 1
     return dict
-
-
-def get_word_count(text):
-    words = len(text.split())
-    return words
 
 
 def get_book_text(book_path):
